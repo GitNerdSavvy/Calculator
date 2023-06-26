@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap');
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif; 
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.mx-auto {
+    margin: auto;
+}
+.button{
+    font-size:larger;
+    width: 64px;
+    padding: 15px;
+    margin: 0 3px;
+    border: 2px solid black;
+    border-radius: 33px;
+    cursor: pointer;
+  }
+  .light-green{
+    background-color: rgb(164, 236, 164);
+    color: rgb(1, 91, 1);
+ }
+ .dark-green{
+    background-color: rgb(45, 135, 45);
+ }
+ .font-size{
+     font-size: 3px;
+ }
+ .white{
+  color: antiquewhite;
+  font-weight: bolder;
+ }
+  
+  .row{
+    margin: 8px 0;
+  }
+  .row input{
+    width: 291px;
+    font-size: 20px;
+      margin: 0;
+      padding: 10px 9px;
+      border: 2px solid black;
+      border-radius: 39px;
+  }</style>
+   <script>let string = "";
+let buttons = document.querySelectorAll('.button');
+Array.from(buttons).forEach((button)=>{
+    button.addEventListener('click', (e)=>{
+      if(e.target.innerHTML == '='){
+        string = eval(string);
+        document.querySelector('input').value = string;
+      }
+      else if(e.target.innerHTML == 'AC'){
+        string = ""
+        document.querySelector('input').value = string;
+      }
+      else if(e.target.innerHTML == 'Del'){
+        string =  document.querySelector('input').value-1;
+        document.querySelector('input').value = string;
+      }
+     
+      else{ 
+      console.log(e.target)
+      string = string + e.target.innerHTML;
+      document.querySelector('input').value = string;
+        }
+    })
+  })
+  </script>
+    <title>Calculator App</title>
+</head>
+<body>
+ <h2 class="text-center" >IQOO Calculator</h2>
+ <div class="container flex flex-col items-center mx-auto m-w-20">
+    <div class="row">
+        <input type="text" class="input">
+    </div>
+    <div class="row">
+        <button class="light-green button">AC</button>
+        <button class="light-green button">Del</button>
+        <button class="light-green button">+/-</button>
+        <button class="light-green button">/</button>
+    </div>
+    <div class="row">
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="light-green button">*</button>
+    </div>
+    <div class="row">
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="light-green button">-</button>
+    </div>
+    <div class="row">
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="light-green button">+</button>
+    </div>
+    <div class="row">
+        <button class="button">%</button>
+        <button class="button">0</button>
+        <button class="button">.</button>
+        <button class="dark-green white button">=</button>
+    </div>
+ </div>
+
+   
+</body>
+</html>
