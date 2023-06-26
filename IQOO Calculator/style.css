@@ -4,6 +4,27 @@ html, body {
   width: 100%;
   font-family: 'Roboto', sans-serif; 
 }
+
+.text-center {
+    text-align: center;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.mx-auto {
+    margin: auto;
+}
 .button{
     font-size:larger;
     width: 64px;
